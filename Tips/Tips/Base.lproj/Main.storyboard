@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pel-3l-DqT">
-                                <rect key="frame" x="32" y="185" width="42" height="21"/>
+                                <rect key="frame" x="32" y="158" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TIz-yg-fW8">
-                                <rect key="frame" x="134" y="185" width="154" height="21"/>
+                                <rect key="frame" x="134" y="158" width="154" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -51,17 +51,33 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" id="I5r-dG-qYy">
-                                <rect key="frame" x="-7" y="273" width="335" height="11"/>
+                                <rect key="frame" x="0.0" y="212" width="335" height="11"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.3977802017" green="0.53582733930000004" blue="0.64180871210000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <navigationBar contentMode="scaleToFill" id="B9t-TJ-EAF">
+                                <rect key="frame" x="0.0" y="21" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.50758597669456962" green="1" blue="0.99614943414870039" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Tip Calculator" id="OsU-fh-glu">
+                                        <barButtonItem key="rightBarButtonItem" title="Settings" id="9ax-hX-tFa">
+                                            <color key="tintColor" red="0.41560410689999999" green="0.35253828399999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="r3u-ZN-7be" kind="push" id="gih-bt-Ksp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="g4X-It-lhM">
-                                <rect key="frame" x="14" y="231" width="293" height="29"/>
+                                <rect key="frame" x="14" y="244" width="293" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="15%"/>
                                     <segment title="20%"/>
                                     <segment title="28%"/>
+                                    <segment title="Custom"/>
                                 </segments>
                                 <connections>
                                     <action selector="onEditBill:" destination="BYZ-38-t0r" eventType="valueChanged" id="PBT-6O-lRM"/>
@@ -81,6 +97,8 @@
                             <outletCollection property="gestureRecognizers" destination="PCJ-fh-gag" appends="YES" id="aa8-Fj-xDk"/>
                         </connections>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="billField" destination="mpB-Nq-F2B" id="lHc-EL-cIF"/>
                         <outlet property="tipLabel" destination="TIz-yg-fW8" id="8fa-Mj-JuD"/>
@@ -95,21 +113,37 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="250" y="342"/>
+            <point key="canvasLocation" x="207" y="342"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="t0O-Ak-Y3j">
+        <!--Settings View Controller-->
+        <scene sceneID="YcK-QB-BSc">
             <objects>
-                <viewController id="xXw-Ls-rqi" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Xzg-74-O52">
+                <viewController id="r3u-ZN-7be" customClass="SettingsViewController" customModule="Tips" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tIG-PU-esL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="4ts-fN-C9U">
+                                <rect key="frame" x="14" y="85" width="293" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
+                                    <segment title="28%"/>
+                                    <segment title="Custom"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onEditBill:" destination="BYZ-38-t0r" eventType="valueChanged" id="piv-9G-Sua"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="KJZ-UV-u4i"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EtN-8D-s7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QVO-F9-KJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="635" y="342"/>
+            <point key="canvasLocation" x="607" y="342"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.41560410692220451" green="0.35253828396331632" blue="1" alpha="1" colorSpace="calibratedRGB"/>
