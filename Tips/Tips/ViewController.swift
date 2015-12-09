@@ -26,14 +26,14 @@ class ViewController: UIViewController {
         
         //setting a default tip level
         var tipDefaultLocation: Int? = userDefaults.objectForKey("tipDefault") as! Int?
-        if(tipDefaultLocation == nil){
-            tipDefaultLocation = 2
-            userDefaults.setObject(tipDefaultLocation, forKey: "tipDefault")
-        }
-        userDefaults.synchronize()
+        //if(tipDefaultLocation == nil){
+            //tipDefaultLocation = 2
+          userDefaults.setInteger(1, forKey: "tipDefault" )
+       tipSelect.selectedSegmentIndex = userDefaults.integerForKey("tipDefault")
+        //userDefaults.synchronize()
         //let tipPercentage = tipPercentages[tipDefaultLocation!]
         
-        switch(tipDefaultLocation!){
+        switch(tipSelect.selectedSegmentIndex){
         case 0:
             self.view.backgroundColor = UIColor.whiteColor()
         case 1:
@@ -48,6 +48,25 @@ class ViewController: UIViewController {
         }
     }
 
+    override func viewWillAppear(animated: Bool) {
+        tipSelect.selectedSegmentIndex = userDefaults.integerForKey("tipDefault")
+        //userDefaults.synchronize()
+        //let tipPercentage = tipPercentages[tipDefaultLocation!]
+        
+        switch(tipSelect.selectedSegmentIndex){
+        case 0:
+            self.view.backgroundColor = UIColor.whiteColor()
+        case 1:
+            self.view.backgroundColor = UIColor.cyanColor()
+        case 2:
+            self.view.backgroundColor = UIColor.yellowColor()
+        case 3:
+            self.view.backgroundColor = UIColor.whiteColor()
+        default:
+            self.view.backgroundColor = UIColor.redColor()
+            break
+        }    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

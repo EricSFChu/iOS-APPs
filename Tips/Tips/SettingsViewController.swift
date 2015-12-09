@@ -11,6 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController {
     @IBOutlet weak var tipDefaultSelect: UISegmentedControl!
     
+    //This is the variable for NSUserDefault access
     var userDefaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
@@ -22,14 +23,17 @@ class SettingsViewController: UIViewController {
     @IBAction func defaultSegmentationChange(sender: AnyObject)
     {
         var tipPercentages = [0.15, 0.20, 0.28, 0.0]
-        let tipDefaultPercentage = tipPercentages[tipDefaultSelect.selectedSegmentIndex]
+        var tipDefaultPercentage = tipPercentages[tipDefaultSelect.selectedSegmentIndex]
     
         //use this to store the default location
-        var tipDefaultLocation: Int? = userDefaults.objectForKey("tipDefault") as! Int?
-        tipDefaultLocation = tipDefaultSelect.selectedSegmentIndex
-        userDefaults.setObject(tipDefaultLocation!, forKey: "tipDefault")
-        print(tipDefaultLocation!);
-        switch(tipDefaultLocation!)
+     
+        //var tipDefaultLocation:Int = tipDefaultSelect.selectedSegmentIndex
+        
+        //set the user default location for tip NSUserDefault
+        userDefaults.setInteger(tipDefaultSelect.selectedSegmentIndex, forKey: "tipDefault")
+        userDefaults.synchronize()
+        print(tipDefaultSelect.selectedSegmentIndex);
+        switch(tipDefaultSelect.selectedSegmentIndex)
         {
         case 0:
             self.view.backgroundColor = UIColor.whiteColor()
