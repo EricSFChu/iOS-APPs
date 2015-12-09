@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="h31-Ql-cfF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Root View Controller-->
+        <scene sceneID="Hxe-kv-jCQ">
+            <objects>
+                <tableViewController id="ebF-xV-brk" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="b0i-WN-i6s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ONh-dj-seh">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ONh-dj-seh" id="J7z-ga-vex">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ebF-xV-brk" id="fk1-Hz-fRE"/>
+                            <outlet property="delegate" destination="ebF-xV-brk" id="alD-Bs-CS5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="YFk-0g-Y6T"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6xT-0U-frg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="361" y="672"/>
+        </scene>
+        <!--Tip Calculator-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tips" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,7 +93,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Settings" id="9ax-hX-tFa">
                                             <color key="tintColor" red="0.41560410689999999" green="0.35253828399999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="r3u-ZN-7be" kind="push" id="gih-bt-Ksp"/>
+                                                <segue destination="r3u-ZN-7be" kind="push" id="tZn-MF-cV3"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -98,6 +127,18 @@
                         </connections>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="OFi-KS-rm3">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="qe7-aj-LgY">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JFb-eK-mV9">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="r3u-ZN-7be" kind="push" id="qsY-nY-fPG"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="billField" destination="mpB-Nq-F2B" id="lHc-EL-cIF"/>
@@ -113,7 +154,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="207" y="342"/>
+            <point key="canvasLocation" x="555" y="36"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="YcK-QB-BSc">
@@ -133,6 +174,7 @@
                                     <segment title="Custom"/>
                                 </segments>
                                 <connections>
+                                    <action selector="defaultSegmentationChange:" destination="r3u-ZN-7be" eventType="valueChanged" id="0wV-V3-nsA"/>
                                     <action selector="onEditBill:" destination="BYZ-38-t0r" eventType="valueChanged" id="piv-9G-Sua"/>
                                 </connections>
                             </segmentedControl>
@@ -140,11 +182,35 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="KJZ-UV-u4i"/>
+                    <connections>
+                        <outlet property="tipDefaultSelect" destination="4ts-fN-C9U" id="gvY-Aw-8Rs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVO-F9-KJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="607" y="342"/>
+            <point key="canvasLocation" x="1075" y="36"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kbW-8a-UiG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h31-Ql-cfF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FOb-0s-7eP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eZH-Vc-XWw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wft-iK-Kul" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115" y="36"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tZn-MF-cV3"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.41560410692220451" green="0.35253828396331632" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
