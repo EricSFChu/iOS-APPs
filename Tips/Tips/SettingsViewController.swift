@@ -58,6 +58,9 @@ class SettingsViewController: UIViewController {
             break
         }
     }
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
     
     @IBAction func onEdit(sender: AnyObject) {
         if (tipDefaultSelect.selectedSegmentIndex == 3)

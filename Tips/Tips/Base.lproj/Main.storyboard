@@ -166,7 +166,7 @@
         <!--Settings View Controller-->
         <scene sceneID="YcK-QB-BSc">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="r3u-ZN-7be" customClass="SettingsViewController" customModule="Tips" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="r3u-ZN-7be" customClass="SettingsViewController" customModule="Tips" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tIG-PU-esL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,6 +226,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVO-F9-KJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3zz-Fh-dl3">
+                    <connections>
+                        <action selector="onTap:" destination="r3u-ZN-7be" id="Ayh-ex-n8s"/>
+                        <outlet property="delegate" destination="tIG-PU-esL" id="8cE-hN-UFE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1075" y="36"/>
         </scene>
@@ -249,7 +255,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tZn-MF-cV3"/>
+        <segue reference="qsY-nY-fPG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.41560410692220451" green="0.35253828396331632" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
