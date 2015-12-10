@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     //allows the use of the above array with segmented buttons
     var tipPercentages = [0.15, 0.20, 0.28, 0.0]
     let userDefaults = NSUserDefaults.standardUserDefaults();
+    let customDefault = NSUserDefaults.standardUserDefaults();
+    var tipPercentage = 0.15
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +27,10 @@ class ViewController: UIViewController {
         totalLabel.text = "$0.00"
         
         //setting a default tip level
-        var tipDefaultLocation: Int? = userDefaults.objectForKey("tipDefault") as! Int?
+       // var tipDefaultLocation: Int? = userDefaults.objectForKey("tipDefault") as! Int?
         //if(tipDefaultLocation == nil){
             //tipDefaultLocation = 2
-          userDefaults.setInteger(1, forKey: "tipDefault" )
+          userDefaults.setInteger(0, forKey: "tipDefault" )
        tipSelect.selectedSegmentIndex = userDefaults.integerForKey("tipDefault")
         //userDefaults.synchronize()
         //let tipPercentage = tipPercentages[tipDefaultLocation!]
@@ -50,9 +52,17 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         tipSelect.selectedSegmentIndex = userDefaults.integerForKey("tipDefault")
-        //userDefaults.synchronize()
-        //let tipPercentage = tipPercentages[tipDefaultLocation!]
+        if (tipSelect.selectedSegmentIndex == 3)
+        {
+            tipPercentages[3] = customDefault.doubleForKey("customPercent")
+        }
+        tipPercentage = tipPercentages[tipSelect.selectedSegmentIndex]
+        let doubleValue : Double = NSString(string: billField.text!).doubleValue
+        let tip = doubleValue * tipPercentage
+        let total = doubleValue + tip
         
+        tipLabel.text = String(format: "$%.2f", tip )
+        totalLabel.text = String(format: "$%.2f", total)
         switch(tipSelect.selectedSegmentIndex){
         case 0:
             self.view.backgroundColor = UIColor.whiteColor()
@@ -77,7 +87,7 @@ class ViewController: UIViewController {
 
         
         //correlates location to location in array
-        let tipPercentage = tipPercentages[tipSelect.selectedSegmentIndex]
+        tipPercentage = tipPercentages[tipSelect.selectedSegmentIndex]
         
         let doubleValue : Double = NSString(string: billField.text!).doubleValue
         let tip = doubleValue * tipPercentage

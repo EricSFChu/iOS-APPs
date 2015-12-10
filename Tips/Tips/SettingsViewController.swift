@@ -10,10 +10,13 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var tipDefaultSelect: UISegmentedControl!
+    @IBOutlet weak var customAmount: UITextField!
+    @IBOutlet weak var currentCustomAmount: UILabel!
     
     //This is the variable for NSUserDefault access
     var userDefaults = NSUserDefaults.standardUserDefaults()
-    
+    var customDefault = NSUserDefaults.standardUserDefaults()
+    var tipPercentages = [0.15, 0.20, 0.28, 0.0]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,8 +25,8 @@ class SettingsViewController: UIViewController {
 
     @IBAction func defaultSegmentationChange(sender: AnyObject)
     {
-        var tipPercentages = [0.15, 0.20, 0.28, 0.0]
-        var tipDefaultPercentage = tipPercentages[tipDefaultSelect.selectedSegmentIndex]
+        
+       // var tipDefaultPercentage = tipPercentages[tipDefaultSelect.selectedSegmentIndex]
     
         //use this to store the default location
      
@@ -33,6 +36,13 @@ class SettingsViewController: UIViewController {
         userDefaults.setInteger(tipDefaultSelect.selectedSegmentIndex, forKey: "tipDefault")
         userDefaults.synchronize()
         print(tipDefaultSelect.selectedSegmentIndex);
+        
+        
+        //custom default percentage to be returned to main view controller
+        
+
+        
+        //changes the color of the UI depending on selectedSegmentIndex
         switch(tipDefaultSelect.selectedSegmentIndex)
         {
         case 0:
@@ -49,6 +59,20 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    @IBAction func onEdit(sender: AnyObject) {
+        if (tipDefaultSelect.selectedSegmentIndex == 3)
+        {
+            let userPercentInput: Int = NSString(string: customAmount.text!).integerValue
+            tipPercentages[3] = Double(userPercentInput) * 0.01
+            customDefault.setDouble(tipPercentages[3], forKey:"customPercent")
+        }
+        customDefault.synchronize()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        tipDefaultSelect.selectedSegmentIndex = userDefaults.integerForKey("tipDefault")
+        currentCustomAmount.text = String(Int(customDefault.doubleForKey("customPercent") * 100))
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
