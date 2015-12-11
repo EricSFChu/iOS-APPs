@@ -14,8 +14,25 @@ class NationView: UIViewController
     
     
     @IBAction func changeToUSD(sender: AnyObject) {
+    self.view.backgroundColor = UIColor.blueColor()
+    }
+    
+    
+    @IBAction func GBP(sender: AnyObject) {
     self.view.backgroundColor = UIColor.redColor()
     }
+    
+    
+    
+    @IBAction func EURO(sender: AnyObject) {
+    self.view.backgroundColor = UIColor.blueColor()
+    }
+    
+    
+    
+    
+    
+    
     
     
     

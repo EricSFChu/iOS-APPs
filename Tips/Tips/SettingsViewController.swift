@@ -78,7 +78,7 @@ class SettingsViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         tipDefaultSelect.selectedSegmentIndex = userDefaults.integerForKey("tipDefault")
-        currentCustomAmount.text = String(Int(customDefault.doubleForKey("customPercent") * 100))
+        currentCustomAmount.text = String(Int(customDefault.doubleForKey("customPercent") * 100)) + "%"
     }
     
     override func didReceiveMemoryWarning() {
