@@ -30,7 +30,8 @@ class ViewController: UIViewController {
         //Locale identification default to US
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         formatter.locale = NSLocale(localeIdentifier: "en_US")
-        
+        // initialize key
+        localeIdentifier.setValue(String("en_US"), forKey: "locale")
         //testing formatter
         print(formatter.stringFromNumber(1234.5678)!)
         

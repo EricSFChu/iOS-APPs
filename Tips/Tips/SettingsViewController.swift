@@ -82,6 +82,21 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         tipDefaultSelect.selectedSegmentIndex = userDefaults.integerForKey("tipDefault")
         currentCustomAmount.text = String(Int(customDefault.doubleForKey("customPercent") * 100)) + "%"
+        //changes the color of the UI depending on selectedSegmentIndex
+        switch(tipDefaultSelect.selectedSegmentIndex)
+        {
+        case 0:
+            self.view.backgroundColor = UIColor.whiteColor()
+        case 1:
+            self.view.backgroundColor = UIColor.cyanColor()
+        case 2:
+            self.view.backgroundColor = UIColor.yellowColor()
+        case 3:
+            self.view.backgroundColor = UIColor.whiteColor()
+        default:
+            self.view.backgroundColor = UIColor.redColor()
+            break
+        }
     }
     
     override func didReceiveMemoryWarning() {

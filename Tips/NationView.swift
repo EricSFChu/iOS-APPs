@@ -35,7 +35,16 @@ class NationView: UIViewController
     }
     
     
-    
+    override func viewWillAppear(animated: Bool) {
+        if(localeIdentifier.valueForKey("locale") as! String == "en_US" || localeIdentifier.valueForKey("locale") as! String == "en_US" )
+        {
+            self.view.backgroundColor = UIColor.blueColor()
+        }
+        else
+        {
+            self.view.backgroundColor = UIColor.redColor()
+        }
+    }
     
     
     
