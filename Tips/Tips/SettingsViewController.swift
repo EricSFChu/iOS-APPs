@@ -13,6 +13,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var customAmount: UITextField!
     @IBOutlet weak var currentCustomAmount: UILabel!
     
+
+    
+    
     //This is the variable for NSUserDefault access
     var userDefaults = NSUserDefaults.standardUserDefaults()
     var customDefault = NSUserDefaults.standardUserDefaults()

@@ -14,15 +14,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipSelect: UISegmentedControl!
+    
     //allows the use of the above array with segmented buttons
     var tipPercentages = [0.15, 0.20, 0.28, 0.0]
+    var tipPercentage = 0.15
+    
+    let local = NSUserDefaults.standardUserDefaults();
     let userDefaults = NSUserDefaults.standardUserDefaults();
     let customDefault = NSUserDefaults.standardUserDefaults();
-    var tipPercentage = 0.15
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //Locale identification default to US
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        formatter.locale = NSLocale(localeIdentifier: "en_US")
+        formatter.stringFromNumber(1234.5678)
+        
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         

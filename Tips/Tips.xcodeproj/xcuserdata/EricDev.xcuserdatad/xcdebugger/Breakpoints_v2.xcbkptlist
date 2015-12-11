@@ -42,7 +42,7 @@
                   moduleName = "Tips"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/EricDev/iOS-APPs/Tips/Tips/ViewController.swift"
-                  timestampString = "471331815.156383"
+                  timestampString = "471516588.173883"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -57,7 +57,7 @@
                   moduleName = "Tips"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/EricDev/iOS-APPs/Tips/Tips/ViewController.swift"
-                  timestampString = "471331815.156619"
+                  timestampString = "471516588.174143"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -72,7 +72,7 @@
                   moduleName = "Tips"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/EricDev/iOS-APPs/Tips/Tips/ViewController.swift"
-                  timestampString = "471331815.15679"
+                  timestampString = "471516588.174339"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
@@ -112,6 +112,83 @@
             endingLineNumber = "21"
             landmarkName = "ViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tips.ViewController.tipPercentage.getter : Swift.Double"
+                  moduleName = "Tips"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/EricDev/iOS-APPs/Tips/Tips/ViewController.swift"
+                  timestampString = "471516588.800046"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tips.ViewController.tipPercentage.setter : Swift.Double"
+                  moduleName = "Tips"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/EricDev/iOS-APPs/Tips/Tips/ViewController.swift"
+                  timestampString = "471516588.800298"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tips.ViewController.tipPercentage.materializeForSet : Swift.Double"
+                  moduleName = "Tips"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/EricDev/iOS-APPs/Tips/Tips/ViewController.swift"
+                  timestampString = "471516588.80052"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tips.ViewController.init (Tips.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Tips.ViewController"
+                  moduleName = "Tips"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/EricDev/iOS-APPs/Tips/Tips/ViewController.swift"
+                  timestampString = "471516588.800855"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "556">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tips.ViewController.init (Tips.ViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Tips.ViewController&gt;"
+                  moduleName = "Tips"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/EricDev/iOS-APPs/Tips/Tips/ViewController.swift"
+                  timestampString = "471516588.801133"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "479">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
