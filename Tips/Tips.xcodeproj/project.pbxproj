@@ -13,6 +13,9 @@
 		7A60ADEC1C0AD60800DC3C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A60ADEB1C0AD60800DC3C5B /* Assets.xcassets */; };
 		7A60ADEF1C0AD60800DC3C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A60ADED1C0AD60800DC3C5B /* LaunchScreen.storyboard */; };
 		7A68DBBD1C17D6D200A92F7C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A68DBBC1C17D6D200A92F7C /* SettingsViewController.swift */; };
+		7A68DBBF1C1AA83900A92F7C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A68DBBE1C1AA83900A92F7C /* MapKit.framework */; };
+		7A68DBC11C1AAA9200A92F7C /* Pictures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A68DBC01C1AAA9200A92F7C /* Pictures.xcassets */; };
+		7A68DBC51C1AB04D00A92F7C /* NationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A68DBC41C1AB04D00A92F7C /* NationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		7A60ADEE1C0AD60800DC3C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A60ADF01C0AD60800DC3C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A68DBBC1C17D6D200A92F7C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7A68DBBE1C1AA83900A92F7C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7A68DBC01C1AAA9200A92F7C /* Pictures.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Pictures.xcassets; sourceTree = "<group>"; };
+		7A68DBC41C1AB04D00A92F7C /* NationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NationView.swift; path = ../NationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A68DBBF1C1AA83900A92F7C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,7 @@
 		7A60ADD81C0AD60800DC3C5B = {
 			isa = PBXGroup;
 			children = (
+				7A68DBBE1C1AA83900A92F7C /* MapKit.framework */,
 				7A60ADE31C0AD60800DC3C5B /* Tips */,
 				7A60ADE21C0AD60800DC3C5B /* Products */,
 			);
@@ -59,6 +67,8 @@
 				7A60ADE41C0AD60800DC3C5B /* AppDelegate.swift */,
 				7A60ADE61C0AD60800DC3C5B /* ViewController.swift */,
 				7A60ADE81C0AD60800DC3C5B /* Main.storyboard */,
+				7A68DBC41C1AB04D00A92F7C /* NationView.swift */,
+				7A68DBC01C1AAA9200A92F7C /* Pictures.xcassets */,
 				7A68DBBC1C17D6D200A92F7C /* SettingsViewController.swift */,
 				7A60ADEB1C0AD60800DC3C5B /* Assets.xcassets */,
 				7A60ADED1C0AD60800DC3C5B /* LaunchScreen.storyboard */,
@@ -99,6 +109,11 @@
 				TargetAttributes = {
 					7A60ADE01C0AD60800DC3C5B = {
 						CreatedOnToolsVersion = 7.1.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -125,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A68DBC11C1AAA9200A92F7C /* Pictures.xcassets in Resources */,
 				7A60ADEF1C0AD60800DC3C5B /* LaunchScreen.storyboard in Resources */,
 				7A60ADEC1C0AD60800DC3C5B /* Assets.xcassets in Resources */,
 				7A60ADEA1C0AD60800DC3C5B /* Main.storyboard in Resources */,
@@ -141,6 +157,7 @@
 				7A60ADE71C0AD60800DC3C5B /* ViewController.swift in Sources */,
 				7A60ADE51C0AD60800DC3C5B /* AppDelegate.swift in Sources */,
 				7A68DBBD1C17D6D200A92F7C /* SettingsViewController.swift in Sources */,
+				7A68DBC51C1AB04D00A92F7C /* NationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +268,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = Tips/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CCSF.Tips;
@@ -262,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = Tips/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CCSF.Tips;

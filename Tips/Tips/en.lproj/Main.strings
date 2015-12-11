@@ -1,0 +1,78 @@
+
+/* Class = "UIViewController"; title = "NationView"; ObjectID = "2J0-dH-MFn"; */
+"2J0-dH-MFn.title" = "NationView";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3b8-WI-L78"; */
+"3b8-WI-L78.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Nation"; ObjectID = "3ou-9g-hQP"; */
+"3ou-9g-hQP.title" = "Nation";
+
+/* Class = "UISegmentedControl"; 4ts-fN-C9U.segmentTitles[0] = "15%"; ObjectID = "4ts-fN-C9U"; */
+"4ts-fN-C9U.segmentTitles[0]" = "15%";
+
+/* Class = "UISegmentedControl"; 4ts-fN-C9U.segmentTitles[1] = "20%"; ObjectID = "4ts-fN-C9U"; */
+"4ts-fN-C9U.segmentTitles[1]" = "20%";
+
+/* Class = "UISegmentedControl"; 4ts-fN-C9U.segmentTitles[2] = "28%"; ObjectID = "4ts-fN-C9U"; */
+"4ts-fN-C9U.segmentTitles[2]" = "28%";
+
+/* Class = "UISegmentedControl"; 4ts-fN-C9U.segmentTitles[3] = "Custom"; ObjectID = "4ts-fN-C9U"; */
+"4ts-fN-C9U.segmentTitles[3]" = "Custom";
+
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "9ax-hX-tFa"; */
+"9ax-hX-tFa.title" = "Settings";
+
+/* Class = "UILabel"; text = "Bill amount"; ObjectID = "D0W-Df-vAi"; */
+"D0W-Df-vAi.text" = "Bill amount";
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "JFb-eK-mV9"; */
+"JFb-eK-mV9.normalTitle" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Lac-NO-Fg4"; */
+"Lac-NO-Fg4.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Tip Calculator"; ObjectID = "OFi-KS-rm3"; */
+"OFi-KS-rm3.title" = "Tip Calculator";
+
+/* Class = "UINavigationItem"; title = "Tip Calculator"; ObjectID = "OsU-fh-glu"; */
+"OsU-fh-glu.title" = "Tip Calculator";
+
+/* Class = "UILabel"; text = "Tips"; ObjectID = "Pel-3l-DqT"; */
+"Pel-3l-DqT.text" = "Tips";
+
+/* Class = "UILabel"; text = "$10"; ObjectID = "TIz-yg-fW8"; */
+"TIz-yg-fW8.text" = "$10";
+
+/* Class = "UILabel"; text = "Test"; ObjectID = "Umy-8n-27s"; */
+"Umy-8n-27s.text" = "Test";
+
+/* Class = "UILabel"; text = "Custom Percentage"; ObjectID = "V3W-Nu-Cir"; */
+"V3W-Nu-Cir.text" = "Custom Percentage";
+
+/* Class = "UINavigationItem"; title = "Root View Controller"; ObjectID = "YFk-0g-Y6T"; */
+"YFk-0g-Y6T.title" = "Root View Controller";
+
+/* Class = "UILabel"; text = "$100"; ObjectID = "c8t-r3-6uf"; */
+"c8t-r3-6uf.text" = "$100";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fFl-kw-9bt"; */
+"fFl-kw-9bt.normalTitle" = "Button";
+
+/* Class = "UISegmentedControl"; g4X-It-lhM.segmentTitles[0] = "15%"; ObjectID = "g4X-It-lhM"; */
+"g4X-It-lhM.segmentTitles[0]" = "15%";
+
+/* Class = "UISegmentedControl"; g4X-It-lhM.segmentTitles[1] = "20%"; ObjectID = "g4X-It-lhM"; */
+"g4X-It-lhM.segmentTitles[1]" = "20%";
+
+/* Class = "UISegmentedControl"; g4X-It-lhM.segmentTitles[2] = "28%"; ObjectID = "g4X-It-lhM"; */
+"g4X-It-lhM.segmentTitles[2]" = "28%";
+
+/* Class = "UISegmentedControl"; g4X-It-lhM.segmentTitles[3] = "Custom"; ObjectID = "g4X-It-lhM"; */
+"g4X-It-lhM.segmentTitles[3]" = "Custom";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "tex-ax-wK8"; */
+"tex-ax-wK8.text" = "Total";
+
+/* Class = "UILabel"; text = "Current Custom Percentage"; ObjectID = "yPp-bV-DXc"; */
+"yPp-bV-DXc.text" = "Current Custom Percentage";

@@ -70,15 +70,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" id="mpB-Nq-F2B">
-                                <rect key="frame" x="93" y="111" width="134" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <connections>
-                                    <action selector="onEditBill:" destination="BYZ-38-t0r" eventType="editingChanged" id="Xro-mx-84t"/>
-                                </connections>
-                            </textField>
                             <view contentMode="scaleToFill" id="I5r-dG-qYy">
                                 <rect key="frame" x="0.0" y="212" width="335" height="11"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -108,6 +99,7 @@
                                     <segment title="28%"/>
                                     <segment title="Custom"/>
                                 </segments>
+                                <color key="tintColor" red="0.41560410689999999" green="0.35253828399999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="onEditBill:" destination="BYZ-38-t0r" eventType="valueChanged" id="PBT-6O-lRM"/>
                                 </connections>
@@ -126,6 +118,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" id="mpB-Nq-F2B">
+                                <rect key="frame" x="93" y="111" width="134" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.41560410689999999" green="0.35253828399999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="onEditBill:" destination="BYZ-38-t0r" eventType="editingChanged" id="Xro-mx-84t"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -163,6 +165,45 @@
             </objects>
             <point key="canvasLocation" x="555" y="36"/>
         </scene>
+        <!--NationView-->
+        <scene sceneID="H0I-HM-jaR">
+            <objects>
+                <viewController title="NationView" id="2J0-dH-MFn" customClass="NationView" customModule="Tips" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HJs-2p-7Rc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="americanflag" id="QPg-1o-qjn">
+                                <rect key="frame" x="40" y="89" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2nf-9b-3sR">
+                                <rect key="frame" x="40" y="82" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="USD"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.019781923539999999" green="0.013385720110000001" blue="0.020737892670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeToUSD:" destination="2J0-dH-MFn" eventType="touchUpInside" id="C4t-1f-W39"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xtk-Ix-HeT"/>
+                    <connections>
+                        <outlet property="americanFlag" destination="QPg-1o-qjn" id="zBF-R5-P5M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0hK-p9-Z9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1309" y="36"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="YcK-QB-BSc">
             <objects>
@@ -171,20 +212,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="4ts-fN-C9U">
-                                <rect key="frame" x="14" y="85" width="293" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="15%"/>
-                                    <segment title="20%"/>
-                                    <segment title="28%"/>
-                                    <segment title="Custom"/>
-                                </segments>
-                                <connections>
-                                    <action selector="defaultSegmentationChange:" destination="r3u-ZN-7be" eventType="valueChanged" id="0wV-V3-nsA"/>
-                                    <action selector="onEditBill:" destination="BYZ-38-t0r" eventType="valueChanged" id="piv-9G-Sua"/>
-                                </connections>
-                            </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="eX5-or-HbZ">
                                 <rect key="frame" x="112" y="241" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -216,10 +243,31 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="4ts-fN-C9U">
+                                <rect key="frame" x="14" y="85" width="293" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
+                                    <segment title="28%"/>
+                                    <segment title="Custom"/>
+                                </segments>
+                                <color key="tintColor" red="0.41560410689999999" green="0.35253828399999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="defaultSegmentationChange:" destination="r3u-ZN-7be" eventType="valueChanged" id="0wV-V3-nsA"/>
+                                    <action selector="onEditBill:" destination="BYZ-38-t0r" eventType="valueChanged" id="piv-9G-Sua"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KJZ-UV-u4i"/>
+                    <navigationItem key="navigationItem" id="KJZ-UV-u4i">
+                        <barButtonItem key="rightBarButtonItem" title="Nation" id="3ou-9g-hQP">
+                            <connections>
+                                <segue destination="2J0-dH-MFn" kind="push" id="kl9-jN-TCX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentCustomAmount" destination="3b8-WI-L78" id="qZS-py-sR2"/>
                         <outlet property="customAmount" destination="eX5-or-HbZ" id="FlT-5j-CXv"/>
@@ -233,7 +281,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1075" y="36"/>
+            <point key="canvasLocation" x="938" y="36"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kbW-8a-UiG">
@@ -254,8 +302,11 @@
             <point key="canvasLocation" x="115" y="36"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="americanflag" width="4096" height="2304"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qsY-nY-fPG"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.41560410692220451" green="0.35253828396331632" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.019781923539409579" green="0.013385720113296543" blue="0.020737892670157021" alpha="1" colorSpace="calibratedRGB"/>
 </document>
