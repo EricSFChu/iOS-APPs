@@ -11,21 +11,27 @@ import UIKit
 class NationView: UIViewController
 {
     @IBOutlet weak var americanFlag: UIImageView!
-    
+    let localeIdentifier = NSUserDefaults.standardUserDefaults();
     
     @IBAction func changeToUSD(sender: AnyObject) {
     self.view.backgroundColor = UIColor.blueColor()
+        localeIdentifier.setValue(String("en_US"), forKey: "locale")
+        localeIdentifier.synchronize()
     }
     
     
     @IBAction func GBP(sender: AnyObject) {
     self.view.backgroundColor = UIColor.redColor()
+        localeIdentifier.setValue(String("en_GB"), forKey: "locale")
+        localeIdentifier.synchronize()
     }
     
     
     
     @IBAction func EURO(sender: AnyObject) {
     self.view.backgroundColor = UIColor.blueColor()
+        localeIdentifier.setValue(String("fr_FR"), forKey: "locale")
+        localeIdentifier.synchronize()
     }
     
     

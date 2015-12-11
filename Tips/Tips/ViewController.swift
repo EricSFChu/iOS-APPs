@@ -19,21 +19,23 @@ class ViewController: UIViewController {
     var tipPercentages = [0.15, 0.20, 0.28, 0.0]
     var tipPercentage = 0.15
     
-    let local = NSUserDefaults.standardUserDefaults();
+    let localeIdentifier = NSUserDefaults.standardUserDefaults();
     let userDefaults = NSUserDefaults.standardUserDefaults();
     let customDefault = NSUserDefaults.standardUserDefaults();
-
+    let formatter = NSNumberFormatter();
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //Locale identification default to US
-        let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         formatter.locale = NSLocale(localeIdentifier: "en_US")
-        formatter.stringFromNumber(1234.5678)
         
-        tipLabel.text = "$0.00"
-        totalLabel.text = "$0.00"
+        //testing formatter
+        print(formatter.stringFromNumber(1234.5678)!)
+        
+        tipLabel.text = formatter.stringFromNumber(0.00)!
+        totalLabel.text = formatter.stringFromNumber(0.00)!
         
         //make the keyboard pop up
         billField.becomeFirstResponder()
@@ -67,8 +69,13 @@ class ViewController: UIViewController {
         let tip = doubleValue * tipPercentage
         let total = doubleValue + tip
         
-        tipLabel.text = String(format: "$%.2f", tip )
-        totalLabel.text = String(format: "$%.2f", total)
+        //set locale on view
+        formatter.locale = NSLocale(localeIdentifier: localeIdentifier.valueForKey("locale") as! String)
+        
+        tipLabel.text = formatter.stringFromNumber(tip)!
+            //String(format: "$%.2f", tip )
+        totalLabel.text = formatter.stringFromNumber(total)!
+            //String(format: "$%.2f", total)
         switch(tipSelect.selectedSegmentIndex){
         case 0:
             self.view.backgroundColor = UIColor.whiteColor()
@@ -99,8 +106,10 @@ class ViewController: UIViewController {
         let tip = doubleValue * tipPercentage
         let total = doubleValue + tip
         
-        tipLabel.text = String(format: "$%.2f", tip )
-        totalLabel.text = String(format: "$%.2f", total)
+        tipLabel.text = formatter.stringFromNumber(tip)!
+        //String(format: "$%.2f", tip )
+        totalLabel.text = formatter.stringFromNumber(total)!
+        //String(format: "$%.2f", total)
         
         switch(tipSelect.selectedSegmentIndex){
         case 0:
