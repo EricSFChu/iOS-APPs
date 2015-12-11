@@ -35,7 +35,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-
+Difficulties arose from my lack of experience with OSX but as I got used to how windows are managed in the operating system, things became much easier. 
 
 ## License
 
