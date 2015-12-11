@@ -26,15 +26,14 @@ class ViewController: UIViewController {
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         
-        //setting a default tip level
-       // var tipDefaultLocation: Int? = userDefaults.objectForKey("tipDefault") as! Int?
-        //if(tipDefaultLocation == nil){
-            //tipDefaultLocation = 2
-          userDefaults.setInteger(0, forKey: "tipDefault" )
-       tipSelect.selectedSegmentIndex = userDefaults.integerForKey("tipDefault")
-        //userDefaults.synchronize()
-        //let tipPercentage = tipPercentages[tipDefaultLocation!]
+        //make the keyboard pop up
+        billField.becomeFirstResponder()
         
+        //load tip defaults from the NSUserDefaults object
+        userDefaults.setInteger(0, forKey: "tipDefault" )
+        tipSelect.selectedSegmentIndex = userDefaults.integerForKey("tipDefault")
+        tipPercentages[3] = userDefaults.doubleForKey("customPercent")
+
         switch(tipSelect.selectedSegmentIndex){
         case 0:
             self.view.backgroundColor = UIColor.whiteColor()
@@ -52,10 +51,8 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         tipSelect.selectedSegmentIndex = userDefaults.integerForKey("tipDefault")
-        if (tipSelect.selectedSegmentIndex == 3)
-        {
-            tipPercentages[3] = customDefault.doubleForKey("customPercent")
-        }
+
+        tipPercentages[3] = customDefault.doubleForKey("customPercent")
         tipPercentage = tipPercentages[tipSelect.selectedSegmentIndex]
         let doubleValue : Double = NSString(string: billField.text!).doubleValue
         let tip = doubleValue * tipPercentage

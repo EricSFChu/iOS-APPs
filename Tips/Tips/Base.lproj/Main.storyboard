@@ -192,6 +192,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert"/>
                                 <connections>
                                     <action selector="onEdit:" destination="r3u-ZN-7be" eventType="editingDidEnd" id="0IG-qm-MzW"/>
+                                    <action selector="onEditDefault:" destination="r3u-ZN-7be" eventType="editingChanged" id="7aD-h4-56H"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V3W-Nu-Cir">
@@ -228,8 +229,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVO-F9-KJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="3zz-Fh-dl3">
                     <connections>
-                        <action selector="onTap:" destination="r3u-ZN-7be" id="Ayh-ex-n8s"/>
-                        <outlet property="delegate" destination="tIG-PU-esL" id="8cE-hN-UFE"/>
+                        <action selector="onTap:" destination="r3u-ZN-7be" id="sUJ-KK-7d9"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

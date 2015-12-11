@@ -23,6 +23,12 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func onEditDefault(sender: AnyObject) {
+        let userPercentInput: Int = NSString(string: customAmount.text!).integerValue
+        tipPercentages[3] = Double(userPercentInput) * 0.01
+        customDefault.setDouble(tipPercentages[3], forKey:"customPercent")
+        customDefault.synchronize()
+    }
     @IBAction func defaultSegmentationChange(sender: AnyObject)
     {
         
@@ -63,13 +69,11 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func onEdit(sender: AnyObject) {
-        if (tipDefaultSelect.selectedSegmentIndex == 3)
-        {
+   
             let userPercentInput: Int = NSString(string: customAmount.text!).integerValue
             tipPercentages[3] = Double(userPercentInput) * 0.01
             customDefault.setDouble(tipPercentages[3], forKey:"customPercent")
-        }
-        customDefault.synchronize()
+            customDefault.synchronize()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -82,7 +86,16 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewWillDisappear(animated: Bool) {
+       /* self.firstView.alpha = 0
+        self.secondView.alpha = 1
+        UIView.animateWithDuration(0.4, animations: {
+            // This causes first view to fade in and second view to fade out
+            self.firstView.alpha = 1
+            self.secondView.alpha = 0
+        })
+        })*/
+    }
     /*
     // MARK: - Navigation
 
