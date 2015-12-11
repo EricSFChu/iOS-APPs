@@ -6,7 +6,7 @@ Tip is a tip calculator application for iOS.
 
 Submitted by: Eric Chu
 
-Time spent: 6 hours spent in total
+Time spent: 10 hours spent in total
 
 ## User Stories
 
