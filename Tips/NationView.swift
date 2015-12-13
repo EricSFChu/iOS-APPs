@@ -11,6 +11,9 @@ import UIKit
 class NationView: UIViewController
 {
     @IBOutlet weak var americanFlag: UIImageView!
+    @IBOutlet weak var britishFlag: UIImageView!
+    @IBOutlet weak var frenchFlag: UIImageView!
+    
     let localeIdentifier = NSUserDefaults.standardUserDefaults();
     
     @IBAction func changeToUSD(sender: AnyObject) {
@@ -33,8 +36,7 @@ class NationView: UIViewController
         localeIdentifier.setValue(String("fr_FR"), forKey: "locale")
         localeIdentifier.synchronize()
     }
-    
-    
+
     override func viewWillAppear(animated: Bool) {
         if(localeIdentifier.valueForKey("locale") as! String == "en_US" || localeIdentifier.valueForKey("locale") as! String == "en_US" )
         {
@@ -46,9 +48,14 @@ class NationView: UIViewController
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
     
+        UIView.animateWithDuration( 2, delay: 0.5, options: [UIViewAnimationOptions.CurveEaseInOut, UIViewAnimationOptions.Autoreverse, UIViewAnimationOptions.Repeat], animations: { self.americanFlag.alpha = 0.5}, completion: nil)
+        UIView.animateWithDuration( 2, delay: 1.0, options: [UIViewAnimationOptions.CurveEaseInOut, UIViewAnimationOptions.Autoreverse, UIViewAnimationOptions.Repeat], animations: { self.britishFlag.alpha = 0.5}, completion: nil)
     
-    
-    
-    
+        UIView.animateWithDuration( 2, delay: 0.75, options: [UIViewAnimationOptions.CurveEaseInOut, UIViewAnimationOptions.Autoreverse, UIViewAnimationOptions.Repeat], animations: { self.frenchFlag.alpha = 0.5}, completion: nil)
+        
+    }
 }
+
+    

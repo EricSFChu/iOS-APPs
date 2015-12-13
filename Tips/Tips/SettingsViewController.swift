@@ -35,12 +35,6 @@ class SettingsViewController: UIViewController {
     @IBAction func defaultSegmentationChange(sender: AnyObject)
     {
         
-       // var tipDefaultPercentage = tipPercentages[tipDefaultSelect.selectedSegmentIndex]
-    
-        //use this to store the default location
-     
-        //var tipDefaultLocation:Int = tipDefaultSelect.selectedSegmentIndex
-        
         //set the user default location for tip NSUserDefault
         userDefaults.setInteger(tipDefaultSelect.selectedSegmentIndex, forKey: "tipDefault")
         userDefaults.synchronize()
@@ -114,6 +108,16 @@ class SettingsViewController: UIViewController {
         })
         })*/
     }
+    /*
+    func keyboardWasShown(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+           // self.baseConstraint.constant = keyboardFrame.size.height + 20
+        })
+    }
+*/
     /*
     // MARK: - Navigation
 
