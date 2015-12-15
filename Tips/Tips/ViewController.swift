@@ -18,14 +18,32 @@ class ViewController: UIViewController {
     //allows the use of the above array with segmented buttons
     var tipPercentages = [0.15, 0.20, 0.28, 0.0]
     var tipPercentage = 0.15
+    // Is it the first time loading?
+    let loadingForFirstTime = NSUserDefaults.standardUserDefaults();
+    
     
     let localeIdentifier = NSUserDefaults.standardUserDefaults();
     let userDefaults = NSUserDefaults.standardUserDefaults();
     let customDefault = NSUserDefaults.standardUserDefaults();
+    //To remember bill amount accross retarts
+    let restartBillAmount = NSUserDefaults.standardUserDefaults();
+    var onAwakeTime = NSDate();
+    
+    let timeForRestartBillAmount = NSUserDefaults.standardUserDefaults()
+    let checkRestartTime = NSUserDefaults.standardUserDefaults()
+    
     let formatter = NSNumberFormatter();
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        onAwakeTime = NSDate();
+        
+        //if it is the first time loading
+        loadingForFirstTime.setValue(Bool(true), forKey: "loadForFirstTime")
+        loadingForFirstTime.synchronize()
+
+        billField.text = checkRestartTime.valueForKey("restartValue") as? String
+
         
         //Locale identification default to US
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
@@ -60,8 +78,14 @@ class ViewController: UIViewController {
             break
         }
     }
-
+    override func viewDidAppear(animated: Bool) {
+        billField.text = checkRestartTime.valueForKey("restartValue") as? String
+        print("Loaded")
+    }
+    
     override func viewWillAppear(animated: Bool) {
+        billField.text = checkRestartTime.valueForKey("restartValue") as? String
+        
         tipSelect.selectedSegmentIndex = userDefaults.integerForKey("tipDefault")
 
         tipPercentages[3] = customDefault.doubleForKey("customPercent")
@@ -99,8 +123,13 @@ class ViewController: UIViewController {
     
     @IBAction func onEditBill(sender: AnyObject) {
 
+        //Update the restartBillAmount
+        restartBillAmount.setValue(billField.text!, forKey: "restartValue")
+        restartBillAmount.synchronize()
+        //print(checkRestartTime.valueForKey("appCloseTime") )
         
-        //correlates location to location in array
+        print(billField.text!)
+        //correlates percentage to number in location of array
         tipPercentage = tipPercentages[tipSelect.selectedSegmentIndex]
         
         let doubleValue : Double = NSString(string: billField.text!).doubleValue
