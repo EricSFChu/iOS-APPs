@@ -219,7 +219,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Xtk-Ix-HeT"/>
+                    <navigationItem key="navigationItem" id="Xtk-Ix-HeT">
+                        <barButtonItem key="rightBarButtonItem" title="Main Menu" id="nmJ-Af-YGs">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="push" id="Wa0-XZ-AS5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="americanFlag" destination="QPg-1o-qjn" id="zBF-R5-P5M"/>
                         <outlet property="britishFlag" destination="LP2-VS-kwe" id="7aO-Wb-Pym"/>
@@ -334,6 +340,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qsY-nY-fPG"/>
+        <segue reference="Wa0-XZ-AS5"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.019781923539409579" green="0.013385720113296543" blue="0.020737892670157021" alpha="1" colorSpace="calibratedRGB"/>
 </document>
