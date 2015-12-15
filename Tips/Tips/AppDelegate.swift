@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        if (NSDate().timeIntervalSinceDate(timeForRestartBillAmount.objectForKey("appCloseTime") as! NSDate) > 60)
+        if (NSDate().timeIntervalSinceDate(timeForRestartBillAmount.objectForKey("appCloseTime") as! NSDate) > 600)
         {
             print("Success1")
             timeForRestartBillAmount.setValue("", forKey: "restartValue")
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        if (NSDate().timeIntervalSinceDate(timeForRestartBillAmount.objectForKey("appCloseTime") as! NSDate) > 60)
+        if (NSDate().timeIntervalSinceDate(timeForRestartBillAmount.objectForKey("appCloseTime") as! NSDate) > 600)
         {
             print("Success2")
             timeForRestartBillAmount.setValue("", forKey: "restartValue")
