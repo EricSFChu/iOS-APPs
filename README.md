@@ -24,6 +24,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [x] Custom Tip Amount
+- [x] Added a navigation button to loop back to main view from the third view
 
 ## Video Walkthrough 
 
