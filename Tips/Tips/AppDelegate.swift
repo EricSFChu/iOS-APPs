@@ -15,9 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //will store time to a dictionary when app terminates
     let timeForRestartBillAmount = NSUserDefaults.standardUserDefaults();
     let loadingForFirstTime = NSUserDefaults.standardUserDefaults();
+    let localeIdentifier = NSUserDefaults.standardUserDefaults();
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // initialize key
+        localeIdentifier.setValue(String("en_US"), forKey: "locale")
+        localeIdentifier.synchronize()
         return true
     }
 

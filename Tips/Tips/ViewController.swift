@@ -47,9 +47,10 @@ class ViewController: UIViewController {
         
         //Locale identification default to US
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
-        formatter.locale = NSLocale(localeIdentifier: "en_US")
-        // initialize key
-        localeIdentifier.setValue(String("en_US"), forKey: "locale")
+        //set locale on view
+        formatter.locale = NSLocale(localeIdentifier: localeIdentifier.valueForKey("locale") as! String)
+
+
         //testing formatter
         print(formatter.stringFromNumber(1234.5678)!)
         
@@ -87,6 +88,7 @@ class ViewController: UIViewController {
         billField.text = checkRestartTime.valueForKey("restartValue") as? String
         
         tipSelect.selectedSegmentIndex = userDefaults.integerForKey("tipDefault")
+        
 
         tipPercentages[3] = customDefault.doubleForKey("customPercent")
         tipPercentage = tipPercentages[tipSelect.selectedSegmentIndex]
