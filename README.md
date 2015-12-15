@@ -6,7 +6,7 @@ Tip is a tip calculator application for iOS.
 
 Submitted by: Eric Chu
 
-Time spent: 10 hours spent in total
+Time spent: 18 hours spent in total
 
 ## User Stories
 
@@ -17,7 +17,7 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 * [x] UI animations
-* [ ] Remembering the bill amount across app restarts (if <10mins)
+* [x] Remembering the bill amount across app restarts (if <10mins)
 * [x] Using locale-specific currency and currency thousands separators.
 * [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
@@ -38,7 +38,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Difficulties arose from my lack of experience with OSX but as I got used to how windows are managed in the operating system, things became much easier. 
+Difficulties arose from my lack of experience with OSX but as I got used to how windows are managed in the operating system, things became much easier. Another difficulty was from figuring out which functions to use when in order to load and save information to and from views. Also figuring out which functions to use and when in the appdeligate.
 
 ## License
 
